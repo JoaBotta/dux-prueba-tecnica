@@ -14,9 +14,9 @@ import io.swagger.v3.oas.annotations.servers.Server;
 @OpenAPIDefinition(
         info = @Info(
                 contact = @Contact(
-                    name = "Dux Software Nicolas Mamani",
-                    email = "XHr5k@example.com",
-                    url = "https://www.duxsoftware.com"
+                    name = "Joaquin Botta",
+                    email = "bottajoaquinuni@gmail.com",
+                    url = "https://joaquin-botta.vercel.app/"
                 ),
                 description = "API Documentation",
                 title = "OpenAPI specification",
