@@ -16,11 +16,11 @@ import com.duxsoftware.dux_prueba_tecnica.services.EquipoService;
 
 import java.util.*;
 
-    @RestController
-    @RequestMapping("/equipos")
-    @PreAuthorize("hasRole('USER')")
-    @SecurityRequirement(name = "bearerAuth")
-    public class EquipoController {
+@RestController
+@RequestMapping("/equipos")
+@PreAuthorize("hasRole('USER')")
+@SecurityRequirement(name = "bearerAuth")
+public class EquipoController {
 
         @Autowired
         private EquipoService equipoService;
@@ -42,11 +42,19 @@ import java.util.*;
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(body);
         }
 
-        @GetMapping( path="/buscar" )
-        public ResponseEntity<List<Equipo>> findByNombre(@RequestParam("nombre") String nombre){
-            List<Equipo> equiposEncontrados = equipoService.findByNombreContaining(nombre);
-            return ResponseEntity.ok(equiposEncontrados);
+    @GetMapping(path = "/buscar")
+    public ResponseEntity<?> findByNombre(@RequestParam("nombre") String nombre) {
+        List<Equipo> equiposEncontrados = equipoService.findByNombreContaining(nombre);
+
+        if (equiposEncontrados.isEmpty()) {
+            Map<String, Object> body = new LinkedHashMap<>();
+            body.put("mensaje", "Equipo no encontrado");
+            body.put("codigo", HttpStatus.NOT_FOUND.value());
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(body);
         }
+
+        return ResponseEntity.ok(equiposEncontrados);
+    }
 
         @PostMapping
         public ResponseEntity<?> createEquipo(@Valid @RequestBody EquipoRequest equipoRequest, BindingResult result){
