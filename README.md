@@ -1,5 +1,5 @@
 # Joaquin Botta - Prueba Tecnica - Dux Sotware
-Este proyecto es una API REST desarrollada con **Spring Boot**, que permite gestionar equipos de fútbol (crear, buscar, actualizar y eliminar). Se implementa autenticación con JWT, documentación interactiva con Swagger, pruebas unitarias con Mockito, base de datos embebida H2 y despliegue con Docker.
+Este proyecto es una API REST desarrollada con **Spring Boot**, que permite gestionar equipos de fútbol (crear, buscar, actualizar y eliminar). Se implementa autenticación con JWT, documentación interactiva con Swagger, pruebas unitarias con Mockito, base de datos embebida H2 y Construccion de imagen con Docker.
 
 | Spring Boot | JWT | Swagger | Docker | H2 Database | Mockito |
 |-------------|-----|---------|--------|-------------|---------|
