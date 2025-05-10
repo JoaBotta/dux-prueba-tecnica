@@ -23,9 +23,9 @@ public class DataInitializer {
 
     @PostConstruct
     public void initialize() {
-        Optional<Usuario> existingUser = usuarioRepository.findByUsername("test");
+        Optional<Usuario> existingUser = usuarioRepository.findByUsername("tést");
         if (existingUser.isEmpty()) {
-            UsuarioRequest usuarioRequest = new UsuarioRequest("test", "12345");
+            UsuarioRequest usuarioRequest = new UsuarioRequest("tést", "12345");
             usuarioService.register(usuarioRequest);
             System.out.println("Usuario 'test' creado automáticamente con contraseña '12345'");
         } else {

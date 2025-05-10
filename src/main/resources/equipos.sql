@@ -1,0 +1,1 @@
+INSERT INTO equipo (nombre, liga, pais) VALUES ('Real Madrid', 'La Liga', 'españa');

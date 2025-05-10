@@ -20,16 +20,22 @@ public class ApplicationConfig {
     private final UsuarioRepository usuarioRepository;
 
     public ApplicationConfig(UsuarioRepository usuarioRepository) {
+        // Se inyecta el repositorio de usuarios en la clase de configuración
+        // para que pueda ser utilizado en la autenticación
         this.usuarioRepository = usuarioRepository;
     }
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
+        // Se crea un AuthenticationManager que utiliza la configuración de autenticación
+        // proporcionada por Spring Security
         return config.getAuthenticationManager();
     }
 
     @Bean
     public AuthenticationProvider authenticationProvider(){
+        // Se crea un AuthenticationProvider que utiliza el UserDetailsService y el PasswordEncoder
+        // para autenticar al usuario
         DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
         daoAuthenticationProvider.setUserDetailsService(userDetailService());
         daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
@@ -42,7 +48,8 @@ public class ApplicationConfig {
     }
 
     @Bean
-    public UserDetailsService userDetailService() {
+    public UserDetailsService userDetailService() { // Se crea un UserDetailsService que busca el usuario en la base de datos
+        // y lo devuelve como un UserDetails
         return username -> usuarioRepository.findByUsername(username)
                 .orElseThrow(()-> new UsernameNotFoundException("Usuario no encontrado"))
                 ;
