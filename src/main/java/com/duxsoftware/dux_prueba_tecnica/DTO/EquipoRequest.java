@@ -9,6 +9,12 @@ public class EquipoRequest {
     @NotBlank
     private String pais;
 
+    public EquipoRequest() {}
+    public EquipoRequest(String nombre, String liga, String pais) {
+    this.nombre = nombre;
+    this.liga = liga;
+    this.pais = pais;
+}
     public String getNombre() {
         return nombre;
     }

@@ -13,3 +13,23 @@ Este proyecto es una API REST desarrollada con **Spring Boot**, que permite gest
 - 🧪 Pruebas unitarias usando Mockito
 - 🗃️ Persistencia en base de datos H2 en memoria
 - 🌐 Roles protegidos con Spring Security
+
+ Instrucciones para compilar y correr la aplicación
+1. Compilar el proyecto
+bash
+Copiar
+Editar
+mvn clean package
+Esto genera el archivo target/api-rest-0.0.1-SNAPSHOT.jar.
+
+2. Construir la imagen Docker
+bash
+Copiar
+Editar
+docker build -t api-prueba-tecnica-duxsoftware .
+3. Ejecutar la aplicación
+bash
+Copiar
+Editar
+docker run -p 8080:8080 api-prueba-tecnica-duxsoftware
+La API quedará disponible en http://localhost:8080.

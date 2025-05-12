@@ -32,13 +32,6 @@ public class AuthController {
         return ResponseEntity.ok(new TokenResponse(token));
     }
 
-    
-    /*@PostMapping( path = "/login")
-    public ResponseEntity<TokenResponse> login(@RequestBody UsuarioRequest usuarioRequest){
-        String token = usuarioService.login(usuarioRequest);
-        TokenResponse tokenResponse = new TokenResponse(token);
-        return ResponseEntity.ok(tokenResponse);
-    }*/
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody UsuarioRequest usuarioRequest){

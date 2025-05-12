@@ -15,8 +15,7 @@ import com.duxsoftware.dux_prueba_tecnica.repositories.EquipoRepository;
 
 @Service
 public class EquipoService {
-    @Autowired
-    private EquipoRepository equipoRepository;
+    @Autowired EquipoRepository equipoRepository;
 
     @Transactional(readOnly = true)
     public List<Equipo> findAll(){
