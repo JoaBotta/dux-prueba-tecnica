@@ -29,7 +29,7 @@ public class EquipoServiceTest {
     public void setUp() {
         equipoRepository = mock(EquipoRepository.class);
         equipoService = new EquipoService();
-        equipoService.equipoRepository = equipoRepository; // inyectamos el mock
+        equipoService.equipoRepository = equipoRepository; // inyecta el mock
     }
 
     @Test
