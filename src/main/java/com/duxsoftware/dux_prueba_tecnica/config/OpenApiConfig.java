@@ -14,8 +14,8 @@ import io.swagger.v3.oas.annotations.servers.Server;
 @OpenAPIDefinition(
         info = @Info(
                 contact = @Contact(
-                    name = "Joaquin Botta",
-                    email = "bottajoaquinuni@gmail.com",
+                    name = "Joaquin Botta Prevero",
+                    email = "bottajoaquin@gmail.com",
                     url = "https://joaquin-botta.vercel.app/"
                 ),
                 description = "API Documentation",
@@ -29,7 +29,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
         ),
         servers = {
                 @Server(
-                        description = "Local",
+                        description = "Local - development server",
                         url = "http://localhost:8080"
                 )
         }
